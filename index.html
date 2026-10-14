@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tell the browser which character encoding this page uses. -->
+    <meta charset="UTF-8">
+    <!-- Make the page responsive on phones and tablets. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the browser tab title. -->
+    <title>Mini File Manager</title>
+    <!-- Load our CSS from the Node server. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main page wrapper. -->
+    <main class="container">
+        <!-- Project title and short description. -->
+        <header>
+            <h1>📁 Mini File Manager</h1>
+            <p>HTML + CSS + JavaScript + Node.js core modules</p>
+        </header>
+
+        <!-- Form used to create a text file. -->
+        <section class="card">
+            <h2>Create File</h2>
+            <form id="fileForm">
+                <!-- Label and input for the filename. -->
+                <label for="filename">File Name</label>
+                <input id="filename" placeholder="notes.txt" required>
+                <!-- Label and textarea for file content. -->
+                <label for="content">Content</label>
+                <textarea id="content" placeholder="Write something..." required></textarea>
+                <!-- Submit button. -->
+                <button type="submit">Create File</button>
+            </form>
+            <!-- JavaScript displays success or error messages here. -->
+            <p id="message"></p>
+        </section>
+
+        <!-- List of files stored by the backend. -->
+        <section class="card">
+            <div class="title-row">
+                <h2>Files</h2>
+                <button id="refreshButton" type="button">Refresh</button>
+            </div>
+            <!-- JavaScript inserts file rows into this list. -->
+            <ul id="fileList"></ul>
+        </section>
+
+        <!-- Basic OS information from the Node os module. -->
+        <section class="card">
+            <h2>System Info</h2>
+            <div id="systemInfo">Loading...</div>
+        </section>
+    </main>
+    <!-- Load browser-side JavaScript after the HTML exists. -->
+    <script src="/app.js"></script>
+</body>
+</html>
